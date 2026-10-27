@@ -21,10 +21,17 @@ const img = document.querySelector('.banner-img');
 const description = document.getElementById('description');
 const arrowLeft = document.querySelector('.arrow_left');
 const arrowRight = document.querySelector('.arrow_right');
-const dots = Array.from(document.querySelectorAll('.dot'));
-
+const puce = document.getElementById('puce');
 
 let currentSlide = 0;
+
+for (j=0; j<slides.length; j++){
+	ligne = document.createElement("li");
+	ligne.setAttribute("class","dot");
+	puce.appendChild(ligne)
+}
+
+const dots = Array.from(document.querySelectorAll('.dot'));
 
 function afficherSlide(slideIndex) {
 	img.src=`./assets/images/slideshow/${slides[slideIndex].image}`;
@@ -51,3 +58,5 @@ arrowRight.addEventListener('click', () => {
 	};
 	afficherSlide(currentSlide);
 });
+
+afficherSlide(currentSlide)
